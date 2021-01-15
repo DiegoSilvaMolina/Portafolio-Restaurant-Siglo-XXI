@@ -5,7 +5,11 @@
 body{
     margin: 0;
     font-family:  sans-serif;
-    background:#97ada2;
+  /*  background: url(../images/hero.jpg)no-repeat center top; */
+    background-attachment: fixed;
+    background-size: cover;
+
+
 }
 
 h1{
@@ -19,7 +23,17 @@ h1{
     margin: auto;
     background: white;
     border-radius: 7px;
-    height: 519px;
+    height: 655px;
+
+}
+
+.form-registerr{
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    border-radius: 7px;
+    height: 514px;
 
 }
 
@@ -34,6 +48,7 @@ h1{
     border-top-right-radius: 7px;
    /* border-bottom: 5px solid #349228; */
 }
+
 
 input{
     margin-bottom: 15px;
@@ -52,6 +67,7 @@ input{
 
 .input-100{
     width: 100%;
+    
 }
 
 .btn-enviar{
@@ -61,6 +77,8 @@ input{
     padding: 10px 40px;
     cursor: pointer;
     font-size: 18px;
+    margin-top: 20px;
+    color: white;
 }
 .btn-enviar:active{
     transform:scale(1.05);

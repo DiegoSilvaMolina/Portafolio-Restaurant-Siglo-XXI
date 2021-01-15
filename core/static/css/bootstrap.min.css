@@ -2114,7 +2114,13 @@ th{
 }
 .table-bordered>thead>tr>th,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>tbody>tr>td,.table-bordered>tfoot>tr>td{
     border:1px solid #ddd;
-    background-color : white;
+    background-color: #6a6a61b3;
+    color: white;
+    font-size: 16px;
+
+
+    
+    
     
 }
 .table-bordered>thead>tr>th,.table-bordered>thead>tr>td{

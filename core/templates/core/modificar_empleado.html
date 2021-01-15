@@ -7,6 +7,8 @@
 
 <link id="changeable-colors" rel="stylesheet" href="{% static 'core/style.css' %}" />
 <link id="changeable-colors" rel="stylesheet" href="{% static 'core/nav.css' %}" />
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 <form action="" method="POST" enctype="multipart/form-data" onsubmit="return validacion();" class="form-register">
     {% csrf_token %}
     <h2 class="form_titulo">Modificar empleado</h2>
@@ -36,7 +38,7 @@
             <option value="{{r.0}}">{{r.1}}</option>
             {% endfor %}
         </select>
-        <input type="submit" value="Guardar" onclick="validacion();" class="btn-enviar">
+        <input type="submit" value="Guardar" onclick="validacion();" class="btn-enviar" style="color: white; margin-top: 20px;">
     </div>
     {% endfor %}
     

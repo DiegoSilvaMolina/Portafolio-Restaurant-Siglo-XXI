@@ -58,7 +58,7 @@ def salir_view(request):
             logout(request)
             return redirect('index')
 
-def crear_receta(request,):
+def crear_receta(request):
     data = {
         'productos': listar_productos_receta()
     }
@@ -516,7 +516,7 @@ class listPedidosPdf(View):
         data = {
             'pedidos': pedidos
         }
-        pdf = generate_pdf('pedidos.html', data)
+        pdf = generate_pdf('pedidosss.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
 
 
@@ -527,3 +527,23 @@ def alertaStock():
     salida = cursor.var(cx_Oracle.NUMBER)
     cursor.callproc("ALERTA_STOCK", [salida])
     return salida.getvalue()
+
+class ordenesPedidos(ListView):
+    model = Pedido
+    template_name = 'ordenes_pedidos.html'
+    context_object_name = 'pedidos'
+
+class listPagosPdf(View):
+
+    def get(self, request, *args, **kwargs):
+        pagos = Pago.objects.all()
+        data = {
+            'pagos': pagos
+        }
+        pdf = generate_pdf('pago.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
+
+class listPagosListView(ListView):
+    model = Pago
+    template_name = 'pago.html'
+    context_object_name = 'pagos'

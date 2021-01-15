@@ -24,7 +24,7 @@ class ClienteViewSet(viewsets.ModelViewSet):
 
 class CocinaViewSet(viewsets.ModelViewSet):
     queryset = Cocina.objects.all()
-    serializer_class = CocinaSerializer
+    serializer_class = Cocina
     permission_classes = [permissions.AllowAny]
 
 class MesaViewSet(viewsets.ModelViewSet):
@@ -71,8 +71,4 @@ class ServicioViewSet(viewsets.ModelViewSet):
     queryset = Servicio.objects.all()
     serializer_class = ServicioSerializer
     permission_classes = [permissions.AllowAny]
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 

@@ -14,7 +14,14 @@
                 margin: 0;
                 padding: 0;
                 height: 100%;
-                background: #7c878a;
+                background: url(../static/images/hero.jpg)no-repeat center top;
+                background-attachment: fixed;
+                background-size: cover;
+                height: 100vh;
+                min-height: 100%;
+                z-index: 1;
+                position: relative;
+                        
             }
             .user_card {
                 width: 350px;
@@ -110,13 +117,13 @@
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" name="username" placeholder="Username..." class="form-control">
+                                <input type="text" name="username" placeholder="Username..." class="form-control" required>
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                    <input type="password" name="password" placeholder="Password..." class="form-control" >
+                                    <input type="password" name="password" placeholder="Password..." class="form-control" required >
                             </div>
     
                                 <div class="d-flex justify-content-center mt-3 login_container">

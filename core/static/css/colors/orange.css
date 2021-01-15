@@ -87,9 +87,15 @@
 }
 
 .reserve-book-btn button{
-	background: #d2bd10;
+	background: #d2bd10 ! important;
 	border: 3px solid #d2bd10;
 }
+
+.reserve-book-btn button:hover{
+	background: white ! important;
+	border: 3px solid #d2bd10;
+}
+
 .reserve-book-btn button:hover a{
 	color:#000000;
 }

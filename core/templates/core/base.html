@@ -49,38 +49,31 @@
 <body>
     
     <header>
+   
+
         <input type="checkbox" id="btn-menu">
         <label for="btn-menu"> <img src="{% static 'images/menu2.png' %}" alt=""></label>
-
+        <img src="" alt="">
 
         <nav class="menu">
 
+
         
             <ul style="background-color: #2f3530;
-            z-index: 1; @media (max-width: 768px) {      /*SI LLEGA A A LOS 767 PX TENDRA 70%*/
-
-.menu ul{
+            z-index: 1; @media (max-width: 768px) {      
+        
+                .menu ul{
   
-    position: absolute;  
+                     position: absolute;  
 
-}
-} "
+                        }
+                    } "
 
             >
           
-                
-                <li ><a style="
-                    
-    margin-left: -200%;
-    color: #c3c312b5;
-    /* background: black; */
-    font-size: 25px;
-    padding: 0px;
-   
-                    
-                    
-                    
-                    " href="{% url 'home' %}" >Restaurant Siglo XXI</a></li>
+            <a href=""></a>
+
+                <li ><a  href="{% url 'home' %}" >Restaurant Siglo XXI</a></li>
                 <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
                 <li><a href="{% url 'productos' %}">Productos</a></li>
                 <li><a href="{% url 'empleados' %}">Empleados</a></li>
@@ -141,3 +134,22 @@
 </body>
 
 </html>
+
+
+
+<!-- 
+    
+    linea de codigo : n 70
+    
+    style="
+                    
+    margin-left: -200%;
+    color: #c3c312b5;
+    /* background: black; */
+    font-size: 25px;
+    padding: 0px;
+   
+                    
+                    
+                    
+                    " -->

@@ -1,4 +1,5 @@
 {% load static %}
+{% load user_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +17,22 @@
     <link id="changeable-colors" rel="stylesheet" href="{% static 'css/colors/orange.css' %}" />
 
 </head>
-<body>
+<body  >
     <header>
         <input type="checkbox" id="btn-menu"> 
         <label for="btn-menu">  <img src="{% static 'images/menu2.png' %}" alt=""></label>
 
     
         <nav class="menu">
+            {% if request.user|has_group:"cocinero" %}
+            <ul>
+                <li><a href="{% url 'home' %}">Restaurant Siglo XXI</a></li>
+                <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
+                <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
+                <li><a href="{% url 'listarReceta' %}">Listado de receta</a></li>
+                <li><a>Bienvenido {{request.user.username}}</a></li>
+            </ul>
+            {% else %}
             <ul>
                 <li><a href="{% url 'home' %}">Restaurant Siglo XXI</a></li>
                 <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
@@ -32,10 +42,11 @@
                 <li><a href="{% url 'listarReceta' %}">Listado de receta</a></li>
                 <li><a>Bienvenido {{request.user.username}}</a></li>
             </ul>
+            {% endif %}
         </nav>
     </header>
-   
-    <form action="" method="POST" enctype="multipart/form-data" style="display: block;" class="form-register">
+   <br>
+    <form action="" method="POST" enctype="multipart/form-data" style="display: block;" class="form-register" >
         {% csrf_token %}
         {% for r in recetas %}
         <h2 class="form_titulo">Modificar receta</h2>
@@ -45,12 +56,12 @@
         
         
             <label for="">Nombre Receta</label>
-            <input type="text" name="nombre" value="{{r.data.1}}"  class="input-100">
+            <input type="text" name="nombre" value="{{r.data.1}}"  class="input-100" style="  height: 33px;">
         
         
             <label for="">Producto 1</label>
             <!--<input type="text" name="producto" value="{{r.data.2}}"  class="input-100"> -->
-            <select name="producto" value="{{r.data.2}}" class="input-100">
+            <select name="producto" value="{{r.data.2}}" class="input-100" style="  height: 33px;">
                 <option value="">{{r.data.2}}</option>
                 {% for p in productos %}
                     <option value="{{ p.1 }}">{{ p.1 }}</option>
@@ -59,7 +70,7 @@
 
             <label for="">Producto 2</label>
             <!--<input type="text" name="producto2" value="{{r.data.3}}"  class="input-100"> -->
-            <select name="producto2" value="{{r.data.3}}" class="input-100">
+            <select name="producto2" value="{{r.data.3}}" class="input-100 " style="  height: 33px;">
                 <option value="">{{r.data.3}}</option>
                 {% for p in productos %}
                     <option value="{{ p.1 }}">{{ p.1 }}</option>
@@ -68,7 +79,7 @@
 
             <label for="">Producto 3</label>
            <!-- <input type="text" name="producto3" value="{{r.data.4}}"  class="input-100"> -->
-            <select name="producto3" value="{{r.data.4}}" class="input-100">
+            <select name="producto3" value="{{r.data.4}}" class="input-100" style="  height: 33px;">
                 <option value="">{{r.data.4}}</option>
                 {% for p in productos %}
                     <option value="{{ p.1 }}">{{ p.1 }}</option>
@@ -77,7 +88,7 @@
 
             <label for="">Producto 4</label>
             <!-- <input type="text" name="producto4" value="{{r.data.5}}"  class="input-100"> -->
-            <select name="producto4" value="{{r.data.5}}" class="input-100">
+            <select name="producto4" value="{{r.data.5}}" class="input-100" style="  height: 33px;">
                 <option value="">{{r.data.5}}</option>
                 {% for p in productos %}
                     <option value="{{ p.1 }}">{{ p.1 }}</option>
@@ -87,12 +98,12 @@
         
             {% if r.imagen %}
             <label for="">Imagen Receta</label>
-            <input type="file" name="imagen" value="{{r.imagen}}"  class="input-100">
+            <input type="file" name="imagen" value="{{r.imagen}}"  class="input-100" style="  height: 33px;">
             {% endif %}
         
         
             <label for="">Valor Receta</label>
-            <input type="text" name="valor" value="{{r.data.7}}"  class="input-100">
+            <input type="text" name="valor" value="{{r.data.7}}"  class="input-100" style="  height: 33px;">
         
         {% endfor %}
         <input type="submit" value="Guardar"  class="btn-enviar">

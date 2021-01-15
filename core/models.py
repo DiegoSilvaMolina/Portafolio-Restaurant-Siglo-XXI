@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-import datetime
+
 
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150, blank=True, null=True)
@@ -42,7 +42,7 @@ class AuthUser(models.Model):
     last_login = models.DateTimeField(blank=True, null=True)
     is_superuser = models.BooleanField()
     username = models.CharField(unique=True, max_length=150, blank=True, null=True)
-    first_name = models.CharField(max_length=30, blank=True, null=True)
+    first_name = models.CharField(max_length=150, blank=True, null=True)
     last_name = models.CharField(max_length=150, blank=True, null=True)
     email = models.CharField(max_length=254, blank=True, null=True)
     is_staff = models.BooleanField()
@@ -85,7 +85,7 @@ class AuthtokenToken(models.Model):
 
 
 class Caja(models.Model):
-    id_caja = models.AutoField(primary_key=True)
+    id_caja = models.FloatField(primary_key=True)
     fecha_operacion = models.DateField()
     monto_ingreso = models.IntegerField()
     monto_egreso = models.IntegerField()
@@ -95,10 +95,13 @@ class Caja(models.Model):
     class Meta:
         managed = False
         db_table = 'caja'
+    
+    def __str__(self):
+        return self.estado_caja
 
 
 class Cliente(models.Model):
-    id_cliente = models.AutoField(primary_key=True)
+    id_cliente = models.IntegerField(primary_key=True)
     nombre_cliente = models.CharField(max_length=30)
     mesa_id_mesa = models.ForeignKey('Mesa', models.DO_NOTHING, db_column='mesa_id_mesa')
 
@@ -106,9 +109,12 @@ class Cliente(models.Model):
         managed = False
         db_table = 'cliente'
 
+    def __str__(self):
+        return self.nombre_cliente
+
 
 class Cocina(models.Model):
-    id_cocina = models.AutoField(primary_key=True)
+    id_cocina = models.FloatField(primary_key=True)
     estado = models.CharField(max_length=30)
     empleado_id_empleado = models.ForeignKey('Empleado', models.DO_NOTHING, db_column='empleado_id_empleado')
     pedido_id_pedido = models.ForeignKey('Pedido', models.DO_NOTHING, db_column='pedido_id_pedido', blank=True, null=True)
@@ -163,7 +169,7 @@ class DjangoSession(models.Model):
 
 
 class Empleado(models.Model):
-    id_empleado = models.AutoField(primary_key=True)
+    id_empleado = models.FloatField(primary_key=True)
     nombre_empleado = models.CharField(max_length=30)
     apellido_empleado = models.CharField(max_length=30)
     email_empleado = models.CharField(max_length=30)
@@ -173,12 +179,9 @@ class Empleado(models.Model):
         managed = False
         db_table = 'empleado'
 
-    def __str__(self):
-        return self.nombre_empleado + ' ' + self.apellido_empleado
-
 
 class Mesa(models.Model):
-    id_mesa = models.AutoField(primary_key=True)
+    id_mesa = models.FloatField(primary_key=True)
     nro_mesa = models.IntegerField()
     capacidad_mesa = models.IntegerField()
     cantidad_clientes = models.IntegerField()
@@ -193,16 +196,19 @@ class Mesa(models.Model):
 
 
 class MetodoPago(models.Model):
-    id_metodo_pago = models.AutoField(primary_key=True)
+    id_metodo_pago = models.FloatField(primary_key=True)
     nombre_metodo_pago = models.CharField(max_length=30)
 
     class Meta:
         managed = False
         db_table = 'metodo_pago'
+    
+    def __str__(self):
+        return self.nombre_metodo_pago
 
 
 class Pago(models.Model):
-    id_pago = models.AutoField(primary_key=True)
+    id_pago = models.IntegerField(primary_key=True)
     monto_pago = models.IntegerField()
     metodo_pago_id_metodo_pago = models.ForeignKey(MetodoPago, models.DO_NOTHING, db_column='metodo_pago_id_metodo_pago')
     caja_id_caja = models.ForeignKey(Caja, models.DO_NOTHING, db_column='caja_id_caja')
@@ -213,10 +219,10 @@ class Pago(models.Model):
 
 
 class Pedido(models.Model):
-    id_pedido = models.AutoField(primary_key=True)
+    id_pedido = models.IntegerField(primary_key=True)
     estado = models.CharField(max_length=30)
     detalle = models.CharField(max_length=120, blank=True, null=True)
-    fecha_creacion = models.DateField()
+    fecha_creacion = models.CharField(max_length=30)
     cliente_id_cliente = models.ForeignKey(Cliente, models.DO_NOTHING, db_column='cliente_id_cliente')
     receta_id_receta = models.ForeignKey('Receta', models.DO_NOTHING, db_column='receta_id_receta')
 
@@ -226,7 +232,7 @@ class Pedido(models.Model):
 
 
 class PedidoBodega(models.Model):
-    id_pedido_bodega = models.AutoField(primary_key=True)
+    id_pedido_bodega = models.FloatField(primary_key=True)
     fecha_pedido = models.DateField(blank=True, null=True)
     cantidad = models.IntegerField()
     estado = models.CharField(max_length=30)
@@ -240,7 +246,7 @@ class PedidoBodega(models.Model):
 
 
 class Producto(models.Model):
-    id_producto = models.AutoField(primary_key=True)
+    id_producto = models.FloatField(primary_key=True)
     nombre_producto = models.CharField(max_length=30)
     detalle_producto = models.CharField(max_length=120)
     cantidad_disponible = models.IntegerField()
@@ -254,9 +260,12 @@ class Producto(models.Model):
 
 
 class Receta(models.Model):
-    id_receta = models.AutoField(primary_key=True)
+    id_receta = models.FloatField(primary_key=True)
     nombre_receta = models.CharField(max_length=60)
-    detalle_receta = models.CharField(max_length=120)
+    producto_receta = models.CharField(max_length=120)
+    producto2_receta = models.CharField(max_length=120)
+    producto3_receta = models.CharField(max_length=120)
+    producto4_receta = models.CharField(max_length=120)
     imagen_receta = models.BinaryField(blank=True, null=True)
     valor_receta = models.IntegerField()
 
@@ -264,9 +273,12 @@ class Receta(models.Model):
         managed = False
         db_table = 'receta'
 
+    def __str__(self):
+        return self.nombre_receta
+
 
 class ReporteFinanzas(models.Model):
-    id_reporte = models.AutoField(primary_key=True)
+    id_reporte = models.FloatField(primary_key=True)
     fecha_creacion = models.DateField()
     monto_total = models.IntegerField()
     empleado_id_empleado = models.ForeignKey(Empleado, models.DO_NOTHING, db_column='empleado_id_empleado')
@@ -277,19 +289,16 @@ class ReporteFinanzas(models.Model):
 
 
 class Rol(models.Model):
-    id_rol = models.AutoField(primary_key=True)
+    id_rol = models.FloatField(primary_key=True)
     nombre_rol = models.CharField(max_length=30)
 
     class Meta:
         managed = False
         db_table = 'rol'
 
-    def __str__(self):
-        return self.nombre_rol
-
 
 class Servicio(models.Model):
-    id_servicio = models.AutoField(primary_key=True)
+    id_servicio = models.FloatField(primary_key=True)
     hora_inicio = models.DateField(blank=True, null=True)
     hora_termino = models.DateField(blank=True, null=True)
     cantidad_clientes = models.IntegerField()

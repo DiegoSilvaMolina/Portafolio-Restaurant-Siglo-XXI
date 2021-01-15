@@ -27,8 +27,6 @@ SECRET_KEY = 'b0n%h0vkg10d3_rf2m#8uj2*^3ikg-a+m)34=zz#i)oj*(3qr)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -92,12 +90,12 @@ CORS_ORIGIN_WHITELIST = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'localhost:1521/XE',
-        'USER': 'C##TEST1',
-        'PASSWORD': '123456',
-        #'NAME': 'restaurant-xxi.cdl4nvk8qmlm.us-east-1.rds.amazonaws.com:1521/DATABASE',
+        #'NAME': 'localhost:1521/XE',
         #'USER': 'desarrollador',
-        #'PASSWORD': 'C3dh4752',
+        #'PASSWORD': '12345',
+        'NAME': 'restaurant-xxi.cdl4nvk8qmlm.us-east-1.rds.amazonaws.com:1521/DATABASE',
+        'USER': 'desarrollador',
+        'PASSWORD': 'C3dh47S2',
         'TEST': {
             'USER': 'default_test',
             'TBLSPACE': 'default_test_tbls',

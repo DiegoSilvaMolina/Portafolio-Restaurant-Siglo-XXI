@@ -1,4 +1,5 @@
 {% load static %}
+{% load user_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +26,14 @@
 
     
         <nav class="menu">
+            {% if request.user|has_group:"cocinero" %}
+            <ul>
+                <li><a href="{% url 'home' %}">Restaurant Siglo XXI</a></li>
+                <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
+                <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
+                <li><a>Bienvenido {{request.user.username}}</a></li>
+            </ul>
+            {% else %}
             <ul>
                 <li><a href="{% url 'home' %}">Restaurant Siglo XXI</a></li>
                 <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
@@ -33,21 +42,22 @@
                 <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
                 <li><a>Bienvenido {{request.user.username}}</a></li>
             </ul>
+            {% endif %}
         </nav>
     </header>
-    
-    <table class="table table-bordered" >
+    <h1 class="lista de resetas" style="color: white; text-align: center; margin-top: 30px;">Lista de recetas</h1>
+    <table class="table table-bordered" style="margin-top:20px" >
         <tr>
-            <th>ID RECETA</th>
-            <th>NOMBRE RECETA</th>
-            <th>PRODUCTO 1</th>
-            <th>PRODUCTO 2</th>
-            <th>PRODUCTO 3</th>
-            <th>PRODUCTO 4</th>
-            <th>IMAGEN RECETA</th>
-            <th>VALOR RECETA</th>
-            <th>MODIFICAR</th>
-            <th>ELIMINAR</th>
+            <th style="background-color: #282d29; color: white">ID RECETA</th>
+            <th style="background-color: #282d29; color: white">NOMBRE RECETA</th>
+            <th style="background-color: #282d29; color: white">PRODUCTO 1</th>
+            <th style="background-color: #282d29; color: white"h>PRODUCTO 2</th>
+            <th style="background-color: #282d29; color: white">PRODUCTO 3</th>
+            <th style="background-color: #282d29; color: white">PRODUCTO 4</th>
+            <th style="background-color: #282d29; color: white">IMAGEN RECETA</th>
+            <th style="background-color: #282d29; color: white">VALOR RECETA</th>
+            <th style="background-color: #282d29; color: white">MODIFICAR</th>
+            <th style="background-color: #282d29; color: white">ELIMINAR</th>
 
         </tr>
         {% for r in recetas %}
@@ -64,8 +74,12 @@
                     {% endif %}
                 </td>
                 <td>{{ r.data.7 }}</td>
-                <td><a href="/mod_receta/{{r.data.0}}">Editar</a></td>
-                <td><a href="/eliminar_Receta/{{r.data.0}}" onClick="return confirm('¿Seguro que quieres borrar la receta {{r.data.1}}?');" role="button">Eliminar</a></td>
+                <td><a href="/mod_receta/{{r.data.0}}" style=" color: #fff; margin-top: 20px;
+                    background-color: #337ab7;
+                    border-color: #2e6da4; padding: 4px;">Editar</a></td>
+                <td><a href="/eliminar_Receta/{{r.data.0}} " style= " color: #fff; margin-top: 20px;
+                    background-color: #b73333;
+                    border-color: #a4322e; padding: 4px;" onClick="return confirm('¿Seguro que quieres borrar la receta {{r.data.1}}?');" role="button">Eliminar</a></td>
             </tr>
         {% endfor %}
     </table>

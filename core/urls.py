@@ -28,8 +28,7 @@ router.register('users', UserViewSet, 'users')
 
 urlpatterns = [
     
-    #url(r'^$', views.index, name='index'),
-    path('',views.index, name='index'),
+    url(r'^$', views.index, name='index'),
     #url(r'^login/$', LoginView.as_view(template_name='login.html'), name='Login'),
     url(r'^login/$', views.login_view, name = "login"),
     url(r'^home$', views.home, name='home'),
@@ -53,7 +52,10 @@ urlpatterns = [
     url(r'^modificar_empleado/(?P<id_empleado>\d+)/$', views.modificar_empleado, name='modificar_empleado'),
     url(r'^eliminar_Empleado/(?P<id_empleado>\d+)/$', views.eliminarEmpleado, name = "eliminarEmpleado"),
     path('pedidos/',views.listPedidosListView.as_view(), name='pedidos'),
+    path('ordenes/',views.ordenesPedidos.as_view(), name='ordenes'),
     path('pedidos-pdf/',views.listPedidosPdf.as_view(), name='pedidos_all'),
+    path('pagos/',views.listPagosListView.as_view(), name='pagos'),
+    path('pagos-pdf/',views.listPagosPdf.as_view(), name='pagos_all'),
 ]
 """  
 router = routers.DefaultRouter()
