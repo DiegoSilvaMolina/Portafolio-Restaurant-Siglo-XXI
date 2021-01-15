@@ -1,5 +1,7 @@
 # Goodservice
 
+#El proyecto contiene funciones de procedimientos almacendados que no se han subido al repositorio y son indispensables para el funcionamiento de la aplicacion.
+
 Caso número 3 portafolio de título
 
 En el backend en settings.py, en la sección Databases, deben cambiar el name a su localhost con el puerto en que esté conectado el sql developer.
