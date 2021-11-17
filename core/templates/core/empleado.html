@@ -38,8 +38,8 @@
             <input type="email" class="form-control" id="email_empleado" name="email_empleado" placeholder="Email">
 
 
-            <d class="form-group col-md-3"></d>
-            <label for="rol_id_rol" style="margin-left: -40px;">Rol</label>
+            
+            <label for="rol_id_rol" style="position: left;">Rol</label>
             <select class="form-control" name="rol_id_rol" id="rol_id_rol">
                 <option value="">Seleccionar</option>
                 {% for r in rol %}
@@ -65,7 +65,7 @@ margin-top: 65px; font-size: 27px;" >Empleados</h2>
             <th style="background-color: #282d29;color: white;" >Apellido</th>
             <th style="background-color: #282d29;color: white;" >Correo</th>
             <th style="background-color: #282d29;color: white;" >Rol</th>
-            <th style="background-color: #282d29;color: white;">Editar</th>
+            <th style="background-color: #282d29;color: white;">Modificar</th>
             <th style="background-color: #282d29;color: white;" >Eliminar</th>
         </tr>
         {% for e in empleados %}
@@ -79,7 +79,7 @@ margin-top: 65px; font-size: 27px;" >Empleados</h2>
             </td>
             <td>
                 <a class="btn btn-sm btn-danger" href="/eliminar_Empleado/{{ e.0 }}"
-                    onClick="return confirm('¿Seguro que quieres borrar a {{e.1}}?');" role="button"  > Borrar</a>
+                    onClick="return confirm('¿Seguro que quieres borrar a {{e.1}}?');" role="button"  > Eliminar</a>
             </td>
         </tr>
         {% endfor %}

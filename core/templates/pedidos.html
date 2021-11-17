@@ -47,7 +47,7 @@
                 <li><a href="{% url 'productos' %}">Productos</a></li>
                 <li><a href="{% url 'empleados' %}">Empleados</a></li>
                 <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
-                <li><a>Bienvenido {{request.user.username}}</a></li>
+                <li><a style="color: white;">Bienvenido {{request.user.username}}</a></li>
             </ul>
             {% endif %}
         </nav>
@@ -56,23 +56,23 @@
 
     <center>
 
-        <h1 style=" margin-top: 40px; font-size: 30px; -webkit-text-stroke: 2px #ffffff ; color: black;">Lista de pedidos</h1>
+        <h1 style=" margin-top: 40px; font-size: 30px; -webkit-text-stroke: 1px #ffffff ; color: white;">Lista de pedidos</h1>
 
 
     <table border="1" style="    height: 68px;
-    color:rgb(0, 0, 0);
+    color:white;
     background: #3a4439c7;
     width: 77%;
     margin-top: 60px;
     font-size: 17px;
     text-align: center;">
         <thead>
-            <th style="color:rgb(0, 0, 0);">Id Pedido</th>
-            <th style="color:rgb(0, 0, 0);">Estado</th>
-            <th style="color:rgb(0, 0, 0);">Detalle</th>
-            <th style="color:rgb(0, 0, 0);">Fecha Creacion</th>
-            <th style="color:rgb(0, 0, 0);">Cliente</th>
-            <th style="color:rgb(0, 0, 0);">Receta</th>
+            <th>Id Pedido</th>
+            <th>Estado</th>
+            <th>Detalle</th>
+            <th>Fecha Creacion</th>
+            <th>Cliente</th>
+            <th>Receta</th>
         </thead>
         <tbody>
             {% for pedido in pedidos %}

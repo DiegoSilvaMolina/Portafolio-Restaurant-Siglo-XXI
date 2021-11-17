@@ -154,6 +154,9 @@ ul, li, ol{
 	margin:0px;
 	padding:0px;
 	list-style:none;
+    position: relative;
+    bottom: 25px;
+    padding-top: 24px;
 }
 
 a {
@@ -444,6 +447,7 @@ html, body{ height: 100%; }
 	color:#fff;
 	padding-bottom: 0px;
 	padding-top:100px;
+    left: 18%;
 }
 
 .banner-text h2 {
@@ -472,7 +476,7 @@ html, body{ height: 100%; }
     font-weight: 500;
 	text-transform:uppercase;
     font-size : 20px;
-    margin-left: 20%;
+    margin-left: 38%;
 }
 .book-btn a:hover{
 	border:3px solid red;
@@ -913,7 +917,7 @@ html, body{ height: 100%; }
 .offer-item div h3 {
     font-size: 20px;
     margin: 9px 0 0px;
-    font-family: 'nautilus_pompiliusregular';
+    font-family: cursive;
     font-weight: 400;
     letter-spacing: .5px;
 }

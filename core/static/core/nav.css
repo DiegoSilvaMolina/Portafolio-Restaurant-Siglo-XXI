@@ -5,10 +5,8 @@ body{
 
 header{
     
-    background: #2f3530;
+    /*background: #2f3530;*/
     max-width: 100%;
-
-
 }
 
 
@@ -32,13 +30,16 @@ header label:hover {
     background: rgba(0,0,0,0.3);
 }
 .menu ul{
-    margin: 0;
+    margin: 0px;
     list-style: none;
     padding: 0;
+    height: 63px;
     display: flex;
     justify-content: flex-end;
-    background-color:  #1b2922;
+    background-color:  #2f3530;
     z-index: 1;
+    position: relative;
+    top: 25px;
 }
 
 
@@ -47,7 +48,7 @@ header label:hover {
     .menu ul{
       
         position: absolute;  
-  
+        z-index: 2;
     }
   }
   
@@ -57,13 +58,16 @@ header label:hover {
 }
 
 .menu li:hover {
-    background: rgba(0,0,0,0.3); ;
+    background: rgba(0,0,0,0.3); 
+    height: fit-content;
 }
+
 .menu li a {
     display: block;
-    padding: 15px 20px;
+    padding: 20px 20px;
     color: #fff;
     text-decoration: none;
+    font-size: 15px;
 }
 
 @media (max-width: 768px){
@@ -81,6 +85,7 @@ header label:hover {
 
     .menu ul {
         flex-direction: column;
+        height: fit-content;
     }
     .menu li {
         border-top: 1px solid #fff;

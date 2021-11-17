@@ -12,13 +12,19 @@
                 margin: 0;
                 padding: 0;
                 height: 100%;
-                background: #7abecc !important;
+                background: url(../static/images/hero.jpg) no-repeat top ;
+                background-attachment: fixed;
+                background-size: cover;
+                min-height: 100%;
+                min-width: 100%;
+                z-index: 1;
+                position: relative;
             }
             .user_card {
                 width: 350px;
                 margin-top: auto;
                 margin-bottom: auto;
-                background: #74cfbf;
+                background: #b6bfbe;
                 position: relative;
                 display: flex;
                 justify-content: center;
@@ -40,7 +46,7 @@
             }
             .login_btn {
                 width: 100%;
-                background: #33ccff !important;
+                background: #2c5563f5 !important; 
                 color: white !important;
             }
             .login_btn:focus {
@@ -66,11 +72,12 @@
     
     </head>
     <body>
+        
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <div class="user_card">
                     <div class="d-flex justify-content-center">
-                        <h3 id="form-title">REGISTER ACCOUNT</h3>
+                        <h3 id="form-title">Registro de Usuario</h3>
                     </div>
                     <div class="d-flex justify-content-center form_container">
     
@@ -102,14 +109,14 @@
                             </div>
                                 
                                <div class="d-flex justify-content-center mt-3 login_container">
-                                 <input class="btn login_btn" type="submit" value="Register Account">
+                                 <input class="btn login_btn" type="submit" value="Registrar Cuenta">
                                </div>
                         </form>
                     </div>
                     {{form.errors}}
                     <div class="mt-4">
                         <div class="d-flex justify-content-center links">
-                            Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+                            Ya tienes una cuenta? <a href="{% url 'login' %}" class="ml-2">Ingresar</a>
                         </div>
                     </div>
                 </div>
@@ -122,10 +129,10 @@
     
             //Query All input fields
             var form_fields = document.getElementsByTagName('input')
-            form_fields[1].placeholder='Username..';
-            form_fields[2].placeholder='Email..';
-            form_fields[3].placeholder='Enter password...';
-            form_fields[4].placeholder='Re-enter Password...';
+            form_fields[1].placeholder='Usuario';
+            form_fields[2].placeholder='Correo Electronico';
+            form_fields[3].placeholder='Ingrese la contraseña';
+            form_fields[4].placeholder='Confirme la contraseña';
     
     
             for (var field in form_fields){	

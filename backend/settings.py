@@ -90,12 +90,9 @@ CORS_ORIGIN_WHITELIST = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        #'NAME': 'localhost:1521/XE',
-        #'USER': 'desarrollador',
-        #'PASSWORD': '12345',
-        'NAME': 'restaurant-xxi.cdl4nvk8qmlm.us-east-1.rds.amazonaws.com:1521/DATABASE',
-        'USER': 'desarrollador',
-        'PASSWORD': 'C3dh47S2',
+        'NAME': 'localhost:1522/XE',
+        'USER': 'devsafio',
+        'PASSWORD': 'prueba1122',
         'TEST': {
             'USER': 'default_test',
             'TBLSPACE': 'default_test_tbls',

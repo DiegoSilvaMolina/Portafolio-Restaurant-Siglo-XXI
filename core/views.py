@@ -540,7 +540,7 @@ class listPagosPdf(View):
         data = {
             'pagos': pagos
         }
-        pdf = generate_pdf('pago.html', data)
+        pdf = generate_pdf('pagos_pdf.html', data)
         return HttpResponse(pdf, content_type='application/pdf')
 
 class listPagosListView(ListView):

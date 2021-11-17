@@ -25,14 +25,14 @@
             }
             .user_card {
                 width: 350px;
-                margin-top: auto;
+                margin-top: 170px;
                 margin-bottom: auto;
                 background: #b6bfbe;  
                 position: relative; 
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
-                padding: 10px;
+                padding: 45px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -108,7 +108,7 @@
                     <div class="d-flex justify-content-center">
     
     
-                        <h3 id="form-title">LOGIN</h3>
+                        <h3 id="form-title">BIENVENIDO</h3>
                     </div>
                     <div class="d-flex justify-content-center form_container">
                         <form method="POST" action="">
@@ -117,17 +117,17 @@
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" name="username" placeholder="Username..." class="form-control" required>
+                                <input type="text" name="username" placeholder="Usuario" class="form-control" required>
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                    <input type="password" name="password" placeholder="Password..." class="form-control" required >
+                                    <input type="password" name="password" placeholder="Contraseña" class="form-control" required >
                             </div>
     
                                 <div class="d-flex justify-content-center mt-3 login_container">
-                                     <input class="btn login_btn"  type="submit" value="Login" style="background-color:#2c5563f5 !important" >
+                                     <input class="btn login_btn"  type="submit" value="Ingresar" style="background-color:#2c5563f5 !important" >
                                    </div>
                         </form>
     
@@ -135,7 +135,7 @@
             
                     <div class="mt-4">
                         <div class="d-flex justify-content-center links">
-                            Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+                            No tienes una cuenta? <a href="{% url 'register' %}" class="ml-2">Registrarse</a>
                         </div>
                 
                     </div>

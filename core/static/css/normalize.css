@@ -44,6 +44,8 @@ nav,
 section,
 summary {
   display: block;
+  position: relative;
+  bottom: 13px;
 }
 
 /**
@@ -422,4 +424,9 @@ table {
 td,
 th {
   padding: 0;
+  color:white;
+}
+
+tr {
+  color: white;
 }

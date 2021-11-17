@@ -59,29 +59,32 @@
 
 
         
-            <ul style="background-color: #2f3530;
+            <ul style="top:0px; background-color: #2f3530;
             z-index: 1; @media (max-width: 768px) {      
         
                 .menu ul{
-  
-                     position: absolute;  
-
+    
+                     position: relative;  
+    
                         }
                     } "
-
+    
             >
           
             <a href=""></a>
-
+    
                 <li ><a  href="{% url 'home' %}" >Restaurant Siglo XXI</a></li>
                 <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
                 <li><a href="{% url 'productos' %}">Productos</a></li>
                 <li><a href="{% url 'empleados' %}">Empleados</a></li>
                 <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
-                <li><a>Bienvenido {{request.user.username}}</a></li>
+                <li><a href="">Bienvenido {{request.user.username}}</a></li>
             </ul>
         </nav>
+        
     </header>
+
+    
 
     <div id="wrapper">
 

@@ -21,9 +21,10 @@ h1{
     width: 95%;
     max-width: 500px;
     margin: auto;
+    margin-top: 50px;
     background: white;
     border-radius: 7px;
-    height: 655px;
+    height: auto;
 
 }
 

@@ -2088,7 +2088,7 @@ th{
     margin-bottom:20px
 }
 .table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{
-    padding:8px;
+    padding:12px;
     line-height:1.42857143;
     vertical-align:top;
     border-top:1px solid #ddd
@@ -2096,6 +2096,10 @@ th{
 .table>thead>tr>th{
     vertical-align:bottom;
     border-bottom:2px solid #ddd
+}
+.table>tbody>tr>td>img {
+    position: relative;
+    left: 25%;
 }
 .table>caption+thead>tr:first-child>th,.table>colgroup+thead>tr:first-child>th,.table>thead:first-child>tr:first-child>th,.table>caption+thead>tr:first-child>td,.table>colgroup+thead>tr:first-child>td,.table>thead:first-child>tr:first-child>td{
     border-top:0
@@ -2116,7 +2120,7 @@ th{
     border:1px solid #ddd;
     background-color: #6a6a61b3;
     color: white;
-    font-size: 16px;
+    font-size: 17px;
 
 
     
@@ -2710,8 +2714,8 @@ a.btn.disabled,fieldset[disabled] a.btn{
 }
 .btn-primary{
     color:#fff;
-    background-color:#337ab7;
-    border-color:#2e6da4
+    background-color:#007bff;
+    border-color:#007bff;
 }
 .btn-primary:focus,.btn-primary.focus{
     color:#fff;
@@ -2720,8 +2724,8 @@ a.btn.disabled,fieldset[disabled] a.btn{
 }
 .btn-primary:hover{
     color:#fff;
-    background-color:#286090;
-    border-color:#204d74
+    background-color:#0069d9;
+    border-color:#0062cc;
 }
 .btn-primary:active,.btn-primary.active,.open>.dropdown-toggle.btn-primary{
     color:#fff;
@@ -2854,8 +2858,8 @@ a.btn.disabled,fieldset[disabled] a.btn{
 }
 .btn-danger{
     color:#fff;
-    background-color:#d9534f;
-    border-color:#d43f3a
+    background-color:#dc3545;
+    border-color:#dc3545;
 }
 .btn-danger:focus,.btn-danger.focus{
     color:#fff;

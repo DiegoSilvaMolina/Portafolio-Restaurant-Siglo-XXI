@@ -20,32 +20,14 @@
 </head>
 
 <body>
-    <header>
-        <input type="checkbox" id="btn-menu"> 
-        <label for="btn-menu">  <img src="{% static 'images/menu2.png' %}" alt=""></label>
-
     
-        <nav class="menu">
-            <ul>
-                <li><a href="{% url 'home' %}">Restaurant Siglo XXI</a></li>
-                <li><a href="{% url 'salir' %}">Cerrar Sesion</a></li>
-                <li><a href="{% url 'productos' %}">Productos</a></li>
-                <li><a href="{% url 'empleados' %}">Empleados</a></li>
-                <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
-                <li><a style="color: white;">Bienvenido {{request.user.username}}</a></li>
-            </ul>
-            
-        </nav>
-    </header>
-
-
     <center>
 
-        <h1 style="color: white; font-size: 30px; -webkit-text-stroke: 1px; margin-top: 40px;">Lista de Pagos</h1>
+        <h1 style="color: black; font-size: 30px; -webkit-text-stroke: 1px; margin-top: 40px;">Lista de Pagos</h1>
 
 
         <table border="1" style="    height: 68px;
-    color: white;
+    color: black;
     background: #3a4439c7;
     width: 77%;
     margin-top: 60px;
@@ -72,10 +54,7 @@
         <br><br><br><br><br><br>
         <br><br><br><br><br><br>
 
-        <a href="{% url 'pagos_all' %}" style="    padding: 10px;
-    background: rgb(222 29 29); 
-    color: white; "> Descargar PDF
-    </a>
+        
 
     </center>
 

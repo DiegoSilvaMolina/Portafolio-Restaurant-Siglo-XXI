@@ -40,7 +40,7 @@
                 <li><a href="{% url 'productos' %}">Productos</a></li>
                 <li><a href="{% url 'empleados' %}">Empleados</a></li>
                 <li><a href="{% url 'crearReceta' %}">Recetas</a></li>
-                <li><a>Bienvenido {{request.user.username}}</a></li>
+                <li><a style="color: white;">Bienvenido {{request.user.username}}</a></li>
             </ul>
             {% endif %}
         </nav>
@@ -48,7 +48,6 @@
     <h1 class="lista de resetas" style="color: white; text-align: center; margin-top: 30px;">Lista de recetas</h1>
     <table class="table table-bordered" style="margin-top:20px" >
         <tr>
-            <th style="background-color: #282d29; color: white">ID RECETA</th>
             <th style="background-color: #282d29; color: white">NOMBRE RECETA</th>
             <th style="background-color: #282d29; color: white">PRODUCTO 1</th>
             <th style="background-color: #282d29; color: white"h>PRODUCTO 2</th>
@@ -62,7 +61,6 @@
         </tr>
         {% for r in recetas %}
             <tr>
-                <td>{{ r.data.0 }}</td>
                 <td>{{ r.data.1 }}</td>
                 <td>{{ r.data.2 }}</td>
                 <td>{{ r.data.3 }}</td>
